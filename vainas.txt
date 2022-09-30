@@ -1,0 +1,14 @@
+
+Para compilar los proyectos en los que uso minilib usar el siguiente comando:
+	-lmlx -framework OpenGL -framework AppKit
+
+También incluir en el header ---> #include <mlx.h>
+
+-> Fórmula para sacar el offset
+    int offset = (y * line_length + x * (bits_per_pixel / 8));
+
+
+
+
+1. Crear una función que compruebe que el primer argumento dado es un archivo .ber
+
