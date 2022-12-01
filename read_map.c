@@ -47,5 +47,8 @@ static char	**line_allocation(char *file)
 // With the memory allocated, creates a 2D char map
 char	**read_map(char *file)
 {
-	
+	int		i;
+	int		j;
+	char 	c;
+	char	**map;
 }
