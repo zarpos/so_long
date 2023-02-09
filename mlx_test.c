@@ -9,6 +9,9 @@ void *mlx_init();
 // Here we open our first window;
 void *mlx_new_window(void *mlx_ptr, int WINDOW_WIDTH, int WINDOW_HEIGHT, char *title);
 
+// Avoids to just open anc close the window instantly, the loop keeps the window open.
+int mlx_loop(void *mlx_ptr);
+
 // Returns a void * to use it as reference to modify the image later ;) 
 void *mlx_new_image(void *mlx_ptr, int width, int height);
 
