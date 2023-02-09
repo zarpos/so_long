@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <mlx.h>
+#define GREEN 0xFF00 
 
 typedef struct s_data
 {
@@ -16,6 +17,46 @@ typedef struct s_rect
 	int color;
 }	t_rect;
 
+
+
+int rend_rect(t_data *data, t_rect rect)
+{
+	int i;
+	int j;
+
+	if (data->win_ptr == NULL)
+		return 1;
+	i = rect.y;
+	while (i < rect.height + rect.y)
+	{
+		j = rect.x;
+		while (j < rect.width + rect.x)
+			mlx_pixel_put(data->mlx_ptr, data->win_ptr, j++, i, rect.color);
+		i++;
+	}
+	return 0;
+}
+
+int main()
+{
+	t_data data;
+	t_rect rect;
+	
+	data.mlx_ptr = mlx_init();
+	data.win_ptr = mlx_new_window(data.mlx_ptr, 1920, 1080, "hola");
+	
+	rect.x = 5;
+	rect.y = 5;
+	rect.width = 500;
+	rect.height = 300;
+	rect.color = 0xFF00;;
+
+	rend_rect(&data, rect);
+	mlx_loop(data.mlx_ptr);
+	return 0;
+}
+
+/*
 int main()
 {
 	void *mlx_ptr;
@@ -35,4 +76,4 @@ int main()
 	mlx_destroy_window(mlx_ptr, win_ptr);
 //	mlx_destroy_display(mlx_ptr);
 	free(mlx_ptr);
-}
+}*/

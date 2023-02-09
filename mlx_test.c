@@ -12,6 +12,9 @@ void *mlx_new_window(void *mlx_ptr, int WINDOW_WIDTH, int WINDOW_HEIGHT, char *t
 // Returns a void * to use it as reference to modify the image later ;) 
 void *mlx_new_image(void *mlx_ptr, int width, int height);
 
+// Writes pixels in the window.
+int mlx_pixel_put(void *mlx_ptr, void *win_ptr, int x, int y, int color);
+
 // 
 char *mlx_get_data_addr(void *img_ptr, int *bits_per_pixel, int *size_line, int *endian);
 
