@@ -49,7 +49,7 @@ int main()
 	rect.y = 5;
 	rect.width = 500;
 	rect.height = 300;
-	rect.color = 0xFF00;;
+	rect.color = GREEN;
 
 	rend_rect(&data, rect);
 	mlx_loop(data.mlx_ptr);
