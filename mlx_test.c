@@ -1,7 +1,7 @@
 
 // -------------------------------------DOCUMENTATION------------------------------------------------ //
 
-// To compile the minilibx use clang main.c -lX11 -lXext -lmlx
+// To compile the minilibx use < gcc -lmlx -framework OpenGL -framework Appkit  >
 
 // Returns a (void *) to the beginning of the window, so whe should create a variable to store the return vaule and use it as the *mlx_ptr
 void *mlx_init();
@@ -31,5 +31,5 @@ void *mlx_xpm_file_to_image(void *mlx_ptr, char *filename, int *width, int *heig
 void *mlx_destroy_window(void *mlx_ptr, void *win_ptr);
 
 // This function terminates to free all the program, as the display opened before is the last element using memory.
-void *mlx_destroy_display(void *mlx_ptr);
+int mlx_destroy_display(void *mlx_ptr);
 // ------------------------------------------------------------------------------------------------- //
