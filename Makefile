@@ -6,11 +6,12 @@
 #    By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/25 20:18:27 by drubio-m          #+#    #+#              #
-#    Updated: 2023/02/06 17:28:47 by drubio-m         ###   ########.fr        #
+#    Updated: 2023/02/15 18:50:27 by drubio-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = prueba.c
+SRC = read_mapo.c
+SRC_DIR = ./src
 BONUS =
 OBJS = $(SRC:.c=.o)
 BONUS_OBJS = $(BONUS:.c=.o)
@@ -22,9 +23,9 @@ FLAGS = -Wall -Wextra -Werror
 
 INCLUDE = -lmlx -framework OpenGL -framework AppKit
 
-LIBFT_DIR = libft/
+LIBFT_DIR = ./libft/
 LIBFT_A = libft.a
-LIBFT = $(addprefix $(LIBFT_DIR), $(LIBFT_A))
+LIBFT = -L$(LIBFT_DIR) ($(LIBFT_DIR)$(LIBFT_A))
 
 
 GNL_FT = get_next_line.c get_next_line_utils.c
