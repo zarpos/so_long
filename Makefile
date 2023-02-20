@@ -6,11 +6,11 @@
 #    By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/25 20:18:27 by drubio-m          #+#    #+#              #
-#    Updated: 2023/02/15 18:50:27 by drubio-m         ###   ########.fr        #
+#    Updated: 2023/02/20 16:58:12 by drubio-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = read_mapo.c
+SRC = read_map.c
 SRC_DIR = ./src
 BONUS =
 OBJS = $(SRC:.c=.o)
