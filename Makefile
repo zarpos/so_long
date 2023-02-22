@@ -6,11 +6,11 @@
 #    By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/25 20:18:27 by drubio-m          #+#    #+#              #
-#    Updated: 2023/02/20 16:58:12 by drubio-m         ###   ########.fr        #
+#    Updated: 2023/02/22 17:16:26 by drubio-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = read_map.c
+SRC = lolo.c
 SRC_DIR = ./src
 BONUS =
 OBJS = $(SRC:.c=.o)
@@ -21,23 +21,23 @@ NAME = so_long
 RM = rm -rf
 FLAGS = -Wall -Wextra -Werror
 
-INCLUDE = -lmlx -framework OpenGL -framework AppKit
+#INCLUDE = -lmlx -framework OpenGL -framework AppKit
 
 LIBFT_DIR = ./libft/
 LIBFT_A = libft.a
-LIBFT = -L$(LIBFT_DIR) ($(LIBFT_DIR)$(LIBFT_A))
+LIBFT = -L$(LIBFT_DIR) $(LIBFT_DIR)$(LIBFT_A)
 
 
-GNL_FT = get_next_line.c get_next_line_utils.c
-GNL = $(addprefix get_next_line/, $(GNL_FT))
+#GNL_FT = get_next_line.c get_next_line_utils.c
+#GNL = $(addprefix get_next_line/, $(GNL_FT))
 
-ifeq ($(UNAME),Darwin)
+#ifeq ($(UNAME),Darwin)
 	MLX_PATH = minilibx_opengl/
 	MINILIBX:= -L $(MLX_PATH) $(MLX_PATH)libmlx.a -lmlx -framework OpenGL -framework AppKit
-else
-	MLX_PATH = minilibx_linux/
-	MINILIBX:= -L $(MLX_PATH) $(MLX_PATH)libmlx.a -lmlx -lXext -lX11
-endif
+#else
+#	MLX_PATH = minilibx_linux/
+#	MINILIBX:= -L $(MLX_PATH) $(MLX_PATH)libmlx.a -lmlx -lXext -lX11
+#endif
 
 GREEN='\033[32m'
 GRAY='\033[2;37m'
@@ -47,14 +47,14 @@ all: $(NAME)
 
 .SILENT: $(OBJS)
 $(NAME): $(OBJS)
+	@make -C $(MLX_PATH)
 	@echo $(CURSIVE)$(GREEN) " - Making libft..." $(NONE)
 	@sleep 3
-	@make -C $(LIBFT_DIR)
+	@make bonus -C $(LIBFT_DIR)
 	@echo $(CURSIVE)$(GREEN) " - Compiling $(NAME)" $(NONE)
-	@gcc $(FLAGS) $(OBJS) $(LIBFT) $(INCLUDE) -o $(NAME)
+	@gcc $(FLAGS) $(OBJS) $(MINILIBX) $(LIBFT) -o $(NAME)
 	@sleep 3
 	@echo $(CURSIVE)$(GREEN) " - Compiled" $(NONE)
-
 
 
 B = .
