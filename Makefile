@@ -6,7 +6,7 @@
 #    By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/25 20:18:27 by drubio-m          #+#    #+#              #
-#    Updated: 2023/02/22 17:16:26 by drubio-m         ###   ########.fr        #
+#    Updated: 2023/02/22 17:27:28 by drubio-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,9 +44,11 @@ GRAY='\033[2;37m'
 NONE='\033[0m'
 
 all: $(NAME)
+	@echo " \033[36m[ OK ] | READY TO PLAY!\033[0m"
 
 .SILENT: $(OBJS)
 $(NAME): $(OBJS)
+	@echo " \033[33m[ .. ] | Compiling minilibx..\033[0m"
 	@make -C $(MLX_PATH)
 	@echo $(CURSIVE)$(GREEN) " - Making libft..." $(NONE)
 	@sleep 3
