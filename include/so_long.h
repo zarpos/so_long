@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_map.c                                         :+:      :+:    :+:   */
+/*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drubio-m <drubio-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 17:53:18 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/02/28 18:21:08 by drubio-m         ###   ########.fr       */
+/*   Created: 2023/02/27 17:52:30 by drubio-m          #+#    #+#             */
+/*   Updated: 2023/02/28 18:20:10 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#ifndef SO_LONG_H
+# define SO_LONG_H
 
+# include "../libft/libft.h"
 
-void ft_check_args(int argc, char *argv[], t_map *map)
+# define NORMAL  "\x1B[0m"
+# define RED  "\x1B[31m"
+# define GREEN  "\x1B[32m"
+# define YELLOW  "\x1B[33m"
+# define BLUE  "\x1B[34m"
+# define MAGENT  "\x1B[35m"
+# define CYAN  "\x1B[36m"
+# define WHITE  "\x1B[37m"
+
+typedef struct s_map
 {
-	int len;
+    char **map;
+    
+} t_map;
 
-	if (argc != 2)
-	{
-		ft_printf("%s", "Error, solo puedes pasar un argumento");
-		return 0;
-	}
-	else
-	{
-		len = ft_strlen(argv[1]);
-		if (ft_strncmp(argv[1] + (len -4), ".ber", 4))
-		{
-			ft_printf("%s", "Extensión del archivo no valida, prueba con un archivo '.ber");
-			return 0;
-		}
-	}
-}
+void ft_check_args(int argc, char *argv[], t_map *map);
+
+#endif
