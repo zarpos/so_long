@@ -1,35 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/27 17:52:30 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/03 17:59:59 by drubio-m         ###   ########.fr       */
+/*   Created: 2023/03/03 17:03:27 by drubio-m          #+#    #+#             */
+/*   Updated: 2023/03/03 17:27:38 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "../include/so_long.h"
 
-# include "../libft/libft.h"
 
-# define NORMAL  "\x1B[0m"
-# define RED  "\x1B[31m"
-# define GREEN  "\x1B[32m"
-# define YELLOW  "\x1B[33m"
-# define BLUE  "\x1B[34m"
-# define MAGENT  "\x1B[35m"
-# define CYAN  "\x1B[36m"
-# define WHITE  "\x1B[37m"
-
-typedef struct s_map
+int main(int argc, char *argv[])
 {
-    char **map;
-    
-} t_map;
-
-void ft_check_args(int argc, char *argv, t_map *map);
-
-#endif
+    ft_check_args(argc, argv[1]);
+    return 0;
+}

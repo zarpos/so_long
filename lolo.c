@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   lolo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: drubio-m <drubio-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 19:49:44 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/02/22 19:50:36 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/03 16:46:23 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "include/so_long.h"
 
 int main()
 {
@@ -19,5 +19,4 @@ int main()
 	i = ft_strlen(lol);
 	return i;
 }
-
 

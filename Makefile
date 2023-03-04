@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/25 20:18:27 by drubio-m          #+#    #+#              #
-#    Updated: 2023/02/22 19:03:55 by drubio-m         ###   ########.fr        #
+#    Updated: 2023/03/03 17:29:44 by drubio-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = lolo.c
+SRC = read_map.c so_long.c
 SRC_DIR = ./src
 BONUS =
-OBJS = $(SRC:.c=.o)
+OBJS = $(addprefix $(SRC_DIR)/, $(SRC:.c=.o))
 BONUS_OBJS = $(BONUS:.c=.o)
 C = gcc
 FLAGS = -Wall -Wextra -Werror
@@ -27,17 +27,8 @@ LIBFT_DIR = ./libft/
 LIBFT_A = libft.a
 LIBFT = -L$(LIBFT_DIR) $(LIBFT_DIR)$(LIBFT_A)
 
-
-#GNL_FT = get_next_line.c get_next_line_utils.c
-#GNL = $(addprefix get_next_line/, $(GNL_FT))
-
-#ifeq ($(UNAME),Darwin)
-	MLX_PATH = minilibx_opengl/
-	MINILIBX:= -L $(MLX_PATH) $(MLX_PATH)libmlx.a -lmlx -framework OpenGL -framework AppKit
-#else
-#	MLX_PATH = minilibx_linux/
-#	MINILIBX:= -L $(MLX_PATH) $(MLX_PATH)libmlx.a -lmlx -lXext -lX11
-#endif
+MLX_PATH = minilibx_opengl/
+MINILIBX:= -L $(MLX_PATH) $(MLX_PATH)libmlx.a -lmlx -framework OpenGL -framework AppKit
 
 GREEN='\033[32m'
 GRAY='\033[2;37m'
