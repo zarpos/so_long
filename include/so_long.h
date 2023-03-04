@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 17:52:30 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/03 17:59:59 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/04 22:08:11 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,17 @@
 # define SO_LONG_H
 
 # include "../libft/libft.h"
+
+# include "../minilibx_opengl/mlx.h"
+//# include "../minilibx_linux/mlx.h"
+# include "../libft/libft.h"
+# include <unistd.h>
+# include <sys/types.h>
+# include <stdio.h>
+# include <sys/stat.h>
+# include <fcntl.h>
+# include <stdlib.h>
+# include <string.h>
 
 # define NORMAL  "\x1B[0m"
 # define RED  "\x1B[31m"
@@ -26,10 +37,10 @@
 
 typedef struct s_map
 {
-    char **map;
-    
+    char **map;    
 } t_map;
 
 void ft_check_args(int argc, char *argv, t_map *map);
+void convert_map(char *argv, t_map *map);
 
 #endif

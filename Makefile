@@ -6,11 +6,11 @@
 #    By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/25 20:18:27 by drubio-m          #+#    #+#              #
-#    Updated: 2023/03/03 17:29:44 by drubio-m         ###   ########.fr        #
+#    Updated: 2023/03/04 21:28:57 by drubio-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = read_map.c so_long.c
+SRC = read_map.c prueba_leer_mapa.c
 SRC_DIR = ./src
 BONUS =
 OBJS = $(addprefix $(SRC_DIR)/, $(SRC:.c=.o))
