@@ -1,7 +1,7 @@
 #include "../include/so_long.h"
 
 
-// This function will open the map, read it and then convert it to a char **
+// This function will open the map, read it and then convert it to a (char **)
 
 void convert_map(char *argv, t_map *map)
 {
@@ -22,7 +22,7 @@ void convert_map(char *argv, t_map *map)
         map2_arr = ft_strdup(map1_arr);
         free(map1_arr);
         map1_arr = ft_strjoin2(map2_arr, new_arr);
-        free(map2_arr);
+        //free(map2_arr);
         free(new_arr);
     }
     map->map = ft_split(map1_arr, '\n');
