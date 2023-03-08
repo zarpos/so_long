@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 17:52:30 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/04 22:08:11 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/07 18:44:05 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,16 @@
 # define CYAN  "\x1B[36m"
 # define WHITE  "\x1B[37m"
 
+
 typedef struct s_map
 {
-    char **map;    
+    char **map;
 } t_map;
 
 void ft_check_args(int argc, char *argv, t_map *map);
 void convert_map(char *argv, t_map *map);
+void free_full_map(t_map *map);
+int ft_error(char *error, t_map *map);
+
 
 #endif
