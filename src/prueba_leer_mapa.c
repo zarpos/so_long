@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 18:07:46 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/08 18:11:32 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/08 18:33:32 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,37 +41,37 @@ void	convert_map(char *argv, t_map *map)
 
 // Created to check that the map is made only of valid chars
 
-int check_char_map(t_map *map)
+int	check_char_map(t_map *map)
 {
-    char **read;
-    int x;
-    int y;
+	char	**read;
+	int		x;
+	int		y;
 
-    read = map->map;
-    y = 0;
+	read = map->map;
+	y = 0;
 
-    while (read[y])
-    {
-        x = 0;
-        while (read[y][x])
-        {
-            if (read[y][x] != '0' && read[y][x] != '1' && read[y][x] != 'C'
-             && read[y][x] != 'E' && read[y][x] != 'P')
-                ft_error("invalid char detected!", map);
-            x++;
-        }
-        y++;
-    }
-    return 1;
+	while (read[y])
+	{
+		x = 0;
+		while (read[y][x])
+		{
+			if (read[y][x] != '0' && read[y][x] != '1' && read[y][x] != 'C'
+			&& read[y][x] != 'E' && read[y][x] != 'P')
+				ft_error("invalid char detected!", map);
+			x++;
+		}
+		y++;
+	}
+	return (1);
 }
 
 // Checks if all the map is sorrounded by walls aka '1'
 
-int check_borders(t_map *map)
+int	check_borders(t_map *map)
 {
-    char **read;
-    int x;
-    int y;
+	char	**read;
+    int		x;
+    int		y;
 
     read = map->map;
     y = 0;
@@ -98,25 +98,4 @@ int check_borders(t_map *map)
         x++;
     }
     return 1;
-}
-
-int main(int argc, char *argv[])
-{
-    t_map map;
-    int i;
-    int valid;
-    int border;
-
-    i = 0;
-
-    convert_map(argv[1], &map);
-    valid = check_char_map(&map);
-    border = check_borders(&map);
-   /* while (map.map[i])
-    {
-        ft_printf("%s%c", map.map[i], '\n');
-        i++;
-    }*/
-    ft_printf("%c%d", '\n', border);
-    return 0;
 }
