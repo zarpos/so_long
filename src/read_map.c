@@ -6,12 +6,11 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 17:10:25 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/08 18:52:23 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/09 18:24:31 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
-
 
 void	ft_check_args(int argc, char *argv, t_map *map)
 {

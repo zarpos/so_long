@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 18:07:46 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/08 18:33:32 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/09 19:27:05 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	convert_map(char *argv, t_map *map)
 		free(new_arr);
 	}
 	map->map = ft_split(map1_arr, '\n');
+	map->map_copy = ft_split(map1_arr, '\n');
 	free(map1_arr);
 }
 
@@ -49,7 +50,6 @@ int	check_char_map(t_map *map)
 
 	read = map->map;
 	y = 0;
-
 	while (read[y])
 	{
 		x = 0;
@@ -70,32 +70,26 @@ int	check_char_map(t_map *map)
 int	check_borders(t_map *map)
 {
 	char	**read;
-    int		x;
-    int		y;
+	int		x;
+	int		y;
 
-    read = map->map;
-    y = 0;
-    x = ft_strlen(read[y]);
-
-    while(read[y])
-    {
-        if (read[y][0] != '1' || read[y][x - 1] != '1')
-            ft_error("bad wall placement :(", map);
-        y++;
-    }
-    x = 0;
-    while (read[0][x])
-    {
-        if (read[0][x] != '1')
-            ft_error("bad wall placement :(", map);
-        x++;
-    }
-    x = 0;
-    while (read[y - 1][x])
-    {
-        if (read[y - 1][x] != '1')
-            ft_error("bad wall placement :(", map);
-        x++;
-    }
-    return 1;
+	read = map->map;
+	y = 0;
+	map->x_max = ft_strlen(read[y]);
+	while (read[y++])
+		map->y_max++;
+	y = 0;
+	while (read[y])
+	{
+		x = 0;
+		while (read[y][x])
+		{
+			if (read[0][x] != '1' || read[map->y_max - 1][x] != '1'
+				|| read[y][0] != '1' || read[y][map->x_max - 1] != '1')
+				ft_error("Borders aren't correct", map);
+			x++;
+		}
+		y++;
+	}
+	return (1);
 }
