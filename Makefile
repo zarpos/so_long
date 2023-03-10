@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+         #
+#    By: crtorres <crtorres@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/25 20:18:27 by drubio-m          #+#    #+#              #
-#    Updated: 2023/03/08 18:33:36 by drubio-m         ###   ########.fr        #
+#    Updated: 2023/03/10 20:18:22 by crtorres         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,9 @@ BONUS =
 OBJS = $(addprefix $(SRC_DIR)/, $(SRC:.c=.o))
 BONUS_OBJS = $(BONUS:.c=.o)
 C = gcc
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g -fsanitize=address
 NAME = so_long
 RM = rm -rf
-FLAGS = -Wall -Wextra -Werror
 
 #INCLUDE = -lmlx -framework OpenGL -framework AppKit
 

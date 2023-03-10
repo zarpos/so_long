@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prueba_leer_mapa.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: crtorres <crtorres@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 18:07:46 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/09 19:27:05 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/10 21:05:28 by crtorres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,28 +65,40 @@ int	check_char_map(t_map *map)
 	return (1);
 }
 
-// Checks if all the map is sorrounded by walls aka '1'
 
+
+/**
+ * It checks the borders of the map
+ * 
+ * @param map a pointer to the map structure
+ * 
+ * @return 1
+ */
 int	check_borders(t_map *map)
 {
-	char	**read;
+	// char	**read;
 	int		x;
 	int		y;
 
-	read = map->map;
 	y = 0;
-	map->x_max = ft_strlen(read[y]);
-	while (read[y++])
+	map->y_max = 0;
+	map->x_max = ft_strlen(map->map[y]);
+	while (map->map[y])
+	{
 		map->y_max++;
+		y++;
+	}
 	y = 0;
-	while (read[y])
+	while (y < map->y_max)
 	{
 		x = 0;
-		while (read[y][x])
+		while (x < map->x_max)
 		{
-			if (read[0][x] != '1' || read[map->y_max - 1][x] != '1'
-				|| read[y][0] != '1' || read[y][map->x_max - 1] != '1')
+			if (map->map[0][x] != '1' || map->map[map->y_max - 1][x] != '1'
+				|| map->map[y][0] != '1' || map->map[y][map->x_max - 1] != '1')
+			{
 				ft_error("Borders aren't correct", map);
+			}	
 			x++;
 		}
 		y++;

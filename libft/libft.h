@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: crtorres <crtorres@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 18:41:23 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/08 18:33:39 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/10 20:43:20 by crtorres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <unistd.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 5
+#  define BUFFER_SIZE 42
 # endif
 
 typedef struct s_list
