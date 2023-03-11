@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   prueba_leer_mapa.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: crtorres <crtorres@student.42.fr>          +#+  +:+       +#+        */
+/*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/08 18:07:46 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/10 21:05:28 by crtorres         ###   ########.fr       */
+/*   Created: 2023/03/11 16:16:12 by drubio-m          #+#    #+#             */
+/*   Updated: 2023/03/11 16:31:45 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "../include/so_long.h"
 
@@ -66,17 +67,10 @@ int	check_char_map(t_map *map)
 }
 
 
+// Checks that all the map is sorrounded by walls aka '1'
 
-/**
- * It checks the borders of the map
- * 
- * @param map a pointer to the map structure
- * 
- * @return 1
- */
 int	check_borders(t_map *map)
 {
-	// char	**read;
 	int		x;
 	int		y;
 
@@ -96,9 +90,7 @@ int	check_borders(t_map *map)
 		{
 			if (map->map[0][x] != '1' || map->map[map->y_max - 1][x] != '1'
 				|| map->map[y][0] != '1' || map->map[y][map->x_max - 1] != '1')
-			{
-				ft_error("Borders aren't correct", map);
-			}	
+				ft_error("Borders aren't correct", map);	
 			x++;
 		}
 		y++;

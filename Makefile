@@ -3,12 +3,13 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: crtorres <crtorres@student.42.fr>          +#+  +:+       +#+         #
+#    By: drubio-m <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/25 20:18:27 by drubio-m          #+#    #+#              #
-#    Updated: 2023/03/10 20:18:22 by crtorres         ###   ########.fr        #
+#    Created: 2023/03/11 16:17:21 by drubio-m          #+#    #+#              #
+#    Updated: 2023/03/11 16:17:23 by drubio-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 SRC = read_map.c prueba_leer_mapa.c utils.c so_long.c
 SRC_DIR = ./src
