@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 16:16:12 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/11 16:31:45 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/13 18:17:50 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	convert_map(char *argv, t_map *map)
 	fd = open(argv, O_RDONLY);
 	if (!fd)
 		ft_error("Archivo no encontrado!", map);
-		map1_arr = ft_strdup("");
+	map1_arr = ft_strdup("");
 	while (1)
 	{
 		new_arr = get_next_line(fd);
@@ -66,6 +66,12 @@ int	check_char_map(t_map *map)
 	return (1);
 }
 
+// Only function it has, count how many coins, players and exits are in the map
+
+void	count_elements(t_map *map)
+{
+
+}
 
 // Checks that all the map is sorrounded by walls aka '1'
 
