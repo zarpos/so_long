@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 17:10:25 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/14 13:17:23 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/14 21:51:32 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,11 @@ void count_elements(t_map *map)
 		while (map->map[y][x])
 		{
 			if (map->map[y][x] == 'P')
+			{
 				map->player++;
+				map->player_y = y;
+				map->player_x = x;	
+			}
 			if (map->map[y][x] == 'C')
 				map->coin++;
 			if (map->map[y][x] == 'E')
@@ -86,6 +90,7 @@ void count_elements(t_map *map)
 		}
 		y++;
 	}
+	map->coin_copy = map->coin;
 	if (map->player != 1 || map->exit != 1)
 		ft_error("The map doesn't have the right elements!", map);
 }
