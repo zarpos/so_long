@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 17:51:16 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/07 18:21:09 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/14 10:54:56 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@
 int ft_error(char *error, t_map *map)
 {
     ft_printf("%s%s", RED, error);
-    free_full_map(map);
+    if (map->starg == 1)
+        free_full_map(map);
     exit(EXIT_FAILURE);
 }
 
