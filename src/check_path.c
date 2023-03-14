@@ -6,44 +6,13 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 18:00:17 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/14 22:41:12 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/14 22:43:04 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
 // It will eavluate if there is a valid way to the exit
-
-/*void    check_path(t_map *map)
-{
-
-} */
-/*
-void ft_check_validpath(t_map *map, int x, int y)
-{
-    char *p;
-
-    p = &map->map_copy[x][y];
-    if (*p != '1')
-    {
-        if (*p == 'C')
-            map->coin_copy--;
-        *p = '.';
-        if (map->map_copy[x][y + 1] != '1' &&
-            map->map_copy[x][y + 1] != '.')
-            ft_check_validpath(map, x, y + 1);
-        if (map->map_copy[x][y - 1] != '1' &&
-            map->map_copy[x][y - 1] != '.')
-            ft_check_validpath(map, x, y - 1);
-        if (map->map_copy[x - 1][y] != '1' &&
-            map->map_copy[x - 1][y] != '.')
-            ft_check_validpath(map, x - 1, y);
-        if (map->map_copy[x + 1][y] != '1' &&
-            map->map_copy[x + 1][y] != '.')
-            ft_check_validpath(map, x + 1, y);
-    }
-}*/
-
 void check_path(t_map *map, int y, int x)
 {
     char *p;
@@ -65,6 +34,7 @@ void check_path(t_map *map, int y, int x)
     }
 }
 
+// Frees all the copy of the map and checks all the coins have been collected
 void check_and_free(t_map *map)
 {
     int i;
