@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 17:52:30 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/13 18:20:01 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/14 13:12:59 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,22 @@ typedef struct s_map
 	int		y_max;
 	int		x_max;
 	int		coin;
-	int		plyer;
+	int		player;
 	int		exit;
 	int		starg;
+	int 	mov;
 }	t_map;
 
-void ft_check_args(int argc, char *argv, t_map *map);
+void check_args(int argc, char *argv, t_map *map);
 void convert_map(char *argv, t_map *map);
 void free_full_map(t_map *map);
 int ft_error(char *error, t_map *map);
 int	check_char_map(t_map *map);
 int	check_borders(t_map *map);
+void count_elements(t_map *map);
+void init_vars(t_map *map);
+
+
 
 
 #endif

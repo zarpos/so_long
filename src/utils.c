@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 17:51:16 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/14 12:49:12 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/14 13:10:01 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "../include/so_long.h"
 
 // This function checks that there is only 1 argument and its a file '.ber'
-void ft_check_args(int argc, char *argv, t_map *map)
+void check_args(int argc, char *argv, t_map *map)
 {
 	int len;
 

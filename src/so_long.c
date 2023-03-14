@@ -6,45 +6,54 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 17:03:27 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/14 10:58:50 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/14 13:12:02 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
+// Created to just initialize some variables and reduce other functions length
+void init_vars(t_map *map)
+{
+    map->player = 0;
+    map->coin = 0;
+    map->exit = 0;
+    map->mov = 0;
+}
 
-int	main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
     t_map map;
     int i;
-	int x;
+    int x;
     int valid;
     int border;
 
     i = 0;
-	ft_check_args(argc, argv[1], &map);
+    check_args(argc, argv[1], &map);
     convert_map(argv[1], &map);
-  	valid = check_char_map(&map);
-   	border = check_borders(&map);
-  
+    valid = check_char_map(&map);
+    count_elements(&map);
+    border = check_borders(&map);
+
     while (map.map[i])
     {
         printf("%s%c", map.map[i], '\n');
         i++;
     }
-  /*  while (map.map[i])
-    {
-		x = 0;
-        while (map.map[i][x])
-		{
-			write(1, &map.map[i][x], 1);
-			usleep(10000);
-			x++;
-		}
-		printf("%c", '\n');
-        i++;
-    }
-    */
-   	//ft_printf("%c%d", '\n', border);
+    /*  while (map.map[i])
+      {
+          x = 0;
+          while (map.map[i][x])
+          {
+              write(1, &map.map[i][x], 1);
+              usleep(10000);
+              x++;
+          }
+          printf("%c", '\n');
+          i++;
+      }
+      */
+    // ft_printf("%c%d", '\n', border);
     return 0;
 }

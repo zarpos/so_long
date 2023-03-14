@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 17:10:25 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/14 12:50:22 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/14 13:17:23 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,28 @@ int check_char_map(t_map *map)
 // Only function it has, count how many coins, players and exits are in the map
 void count_elements(t_map *map)
 {
+	int y;
+	int x;
+
+	y = 0;
+	init_vars(map);
+	while (map->map[y])
+	{
+		x = 0;
+		while (map->map[y][x])
+		{
+			if (map->map[y][x] == 'P')
+				map->player++;
+			if (map->map[y][x] == 'C')
+				map->coin++;
+			if (map->map[y][x] == 'E')
+				map->exit++;
+			x++;
+		}
+		y++;
+	}
+	if (map->player != 1 || map->exit != 1)
+		ft_error("The map doesn't have the right elements!", map);
 }
 
 // Checks that all the map is sorrounded by walls aka '1'
