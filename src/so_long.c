@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 17:03:27 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/14 13:12:02 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/14 16:27:58 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,6 @@ int main(int argc, char *argv[])
       }
       */
     // ft_printf("%c%d", '\n', border);
+    printf("%c%d%c", '\n', map.coin, '\n');
     return 0;
 }
