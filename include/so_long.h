@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 17:52:30 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/15 10:30:04 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/15 16:05:49 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,13 @@ typedef struct s_map
 	int exit;
 	int starg;
 	int mov;
+	void *mlx;
+	void *win;
+	int	img_w;
+	int	img_h;
+	void *img;
+	
+
 } t_map;
 
 void check_args(int argc, char *argv, t_map *map);
@@ -67,5 +74,5 @@ void count_elements(t_map *map);
 void init_vars(t_map *map);
 void check_path(t_map *map, int x, int y);
 void check_and_free(t_map *map);
-
+void	print_map(t_map *map);
 #endif

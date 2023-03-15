@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 17:03:27 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/14 22:38:47 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/15 16:09:02 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,14 @@ int main(int argc, char *argv[])
     valid = check_char_map(&map);
     count_elements(&map);
     border = check_borders(&map);
-    check_path(&map, map.player_y, map.player_x);
+ 	check_path(&map, map.player_y, map.player_x);
     while (map.map[i])
     {
         printf("%s%c", map.map_copy[i], '\n');
         i++;
     }
     printf("%c", '\n');
-    check_and_free(&map);
+  	check_and_free(&map);
 
     i = 0;
     while (map.map[i])
@@ -67,6 +67,7 @@ int main(int argc, char *argv[])
     // ft_printf("%c%d", '\n', border);
     printf("%c%d%c", '\n', map.coin, '\n');
     printf("%c%d%c", '\n', map.coin_copy, '\n');
+	print_map(&map);
 
     return 0;
 }
