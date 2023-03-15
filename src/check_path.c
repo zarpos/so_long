@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 18:00:17 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/14 22:43:04 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/15 15:04:34 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 void check_path(t_map *map, int y, int x)
 {
     char *p;
-
+	
+	map->coin_copy = map->coin;
     p = &map->map_copy[y][x];
     if (*p != '1')
     {
