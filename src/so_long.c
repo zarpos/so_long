@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 17:03:27 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/15 16:09:02 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/17 14:54:45 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,35 @@ void init_vars(t_map *map)
     map->mov = 0;
 }
 
+void init_img(t_map *map)
+{
+    map->mlx = mlx_init();
+    map->p = mlx_xpm_file_to_image(map->mlx, PL, &map->img_w, &map->img_h);
+    map->c = mlx_xpm_file_to_image(map->mlx, CO, &map->img_w, &map->img_h);
+    map->f = mlx_xpm_file_to_image(map->mlx, FL, &map->img_w, &map->img_h);
+    map->ex = mlx_xpm_file_to_image(map->mlx, EX, &map->img_w, &map->img_h);
+    map->w = mlx_xpm_file_to_image(map->mlx, WL, &map->img_w, &map->img_h);
+}
+
 int main(int argc, char *argv[])
 {
+    t_map map;
+    
+    check_args(argc, argv[1], &map);
+    convert_map(argv[1], &map);
+    check_char_map(&map);
+    count_elements(&map);
+    check_borders(&map);
+    check_path(&map, map.player_y, map.player_x);
+    check_and_free(&map);
+    print_map(&map);
+    mlx_loop(map.mlx);
+    return 0;
+}
+
+/*
+int main(int argc, char *argv[])
+ {
     t_map map;
     int i;
     int x;
@@ -51,7 +78,7 @@ int main(int argc, char *argv[])
         i++;
     }
 
-    /*  while (map.map[i])
+      while (map.map[i])
       {
           x = 0;
           while (map.map[i][x])
@@ -63,11 +90,9 @@ int main(int argc, char *argv[])
           printf("%c", '\n');
           i++;
       }
-      */
-    // ft_printf("%c%d", '\n', border);
-    printf("%c%d%c", '\n', map.coin, '\n');
-    printf("%c%d%c", '\n', map.coin_copy, '\n');
-	print_map(&map);
-
+    
+    ft_printf("%c%d", '\n', border);
+ 
     return 0;
 }
+*/

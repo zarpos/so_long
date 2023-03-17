@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 17:10:25 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/15 15:04:26 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/17 01:00:01 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,15 @@ int check_char_map(t_map *map)
 	return (1);
 }
 
+// Just to apply norminette to the function below
+// had more than 25 lines :(
+static void validate_elements(t_map *map)
+{
+	map->coin_copy = map->coin;
+	if (map->player != 1 || map->exit != 1)
+		ft_error("The map doesn't have the right elements!", map);
+}
+
 // Only function it has, count how many coins, players and exits are in the map
 void count_elements(t_map *map)
 {
@@ -80,7 +89,7 @@ void count_elements(t_map *map)
 			{
 				map->player++;
 				map->player_y = y;
-				map->player_x = x;	
+				map->player_x = x;
 			}
 			if (map->map[y][x] == 'C')
 				map->coin++;
@@ -90,8 +99,7 @@ void count_elements(t_map *map)
 		}
 		y++;
 	}
-	if (map->player != 1 || map->exit != 1)
-		ft_error("The map doesn't have the right elements!", map);
+	validate_elements(map);
 }
 
 // Checks that all the map is sorrounded by walls aka '1'
