@@ -6,12 +6,13 @@
 #    By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/11 16:17:21 by drubio-m          #+#    #+#              #
-#    Updated: 2023/03/17 14:02:18 by drubio-m         ###   ########.fr        #
+#    Updated: 2023/03/17 16:44:36 by drubio-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-SRC = read_map.c utils.c so_long.c check_path.c print_game.c
+SRC = read_map.c utils.c so_long.c check_path.c print_game.c e_hooks.c \
+		movements.c
 SRC_DIR = ./src
 BONUS =
 OBJS = $(addprefix $(SRC_DIR)/, $(SRC:.c=.o))

@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 17:51:16 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/14 13:10:01 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/17 17:37:28 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,16 @@ void check_args(int argc, char *argv, t_map *map)
 	}
 }
 
-//Prints the error and the liberates all the memory allocated to finally, exit de program
+// Terminates the game.
+int end_game(t_map *map)
+{
+	free_full_map(map);
+	mlx_destroy_window(map->mlx, map->win);
+	exit (0);
+	return (0);
+}
+
+// Prints the error and the liberates all the memory allocated to finally, exit de program.
 int ft_error(char *error, t_map *map)
 {
     ft_printf("%s%s", RED, error);
@@ -45,7 +54,7 @@ int ft_error(char *error, t_map *map)
     exit(EXIT_FAILURE);
 }
 
-// Liberates all the map
+// Liberates all the map.
 void free_full_map(t_map *map)
 {
     int i;
@@ -62,3 +71,14 @@ void free_full_map(t_map *map)
     }
 }
 
+// Counts how many coins have been collected and 
+// how many are left.
+void coin_count(t_map *map)
+{
+	map->coin--;
+	ft_printf("%c%s%s%c%d%c", '\n', GREEN, "Coin collected, coins left:",
+		'\n', map->coin, '\n');
+	if (map->coin == 0)
+		ft_printf("%c%s%s%c", '\n', GREEN,
+			"All coins collected! Find the exit", '\n');
+}

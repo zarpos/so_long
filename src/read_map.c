@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 17:10:25 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/17 01:00:01 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/17 17:57:16 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,11 @@ void convert_map(char *argv, t_map *map)
 	char *map2_arr;
 
 	fd = open(argv, O_RDONLY);
-	if (!fd)
-		ft_error("Archivo no encontrado!", map);
+	if (!fd || fd == -1)
+	{ 
+		map->starg = 0;
+		ft_error("File not found!", map);
+	}
 	map1_arr = ft_strdup("");
 	while (1)
 	{
@@ -63,8 +66,7 @@ int check_char_map(t_map *map)
 	return (1);
 }
 
-// Just to apply norminette to the function below
-// had more than 25 lines :(
+// Just to apply norminette to the function below had +25 lines
 static void validate_elements(t_map *map)
 {
 	map->coin_copy = map->coin;
