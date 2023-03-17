@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 17:52:30 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/17 17:38:46 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/17 23:39:42 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ void init_img(t_map *map);
 void draw_img(int y, int x, t_map *map);
 int end_game(t_map *map);
 void coin_count(t_map *map);
+int detect_key(int key, t_map *map);
 
 
 #endif
