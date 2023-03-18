@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 14:21:11 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/17 23:56:42 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/17 23:57:59 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,5 @@ int detect_key(int key, t_map *map)
     if (key == W && map->map[map->player_y - 1][map->player_x] != '1'
         && map->map[map->player_y - 1][map->player_x] != 'E')
         mov_left(map);
-¡    return (0);   
+    return (0);   
 }
