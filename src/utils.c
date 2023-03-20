@@ -6,16 +6,16 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 17:51:16 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/20 16:33:28 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/20 21:22:28 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
 // This function checks that there is only 1 argument and its a file '.ber'
-void check_args(int argc, char *argv, t_map *map)
+void	check_args(int argc, char *argv, t_map *map)
 {
-	int len;
+	int	len;
 
 	map->starg = 1;
 	if (argc != 2)
@@ -35,43 +35,42 @@ void check_args(int argc, char *argv, t_map *map)
 }
 
 // Terminates the game.
-int end_game(t_map *map)
+int	end_game(t_map *map)
 {
-	//free_full_map(map);
-//	mlx_destroy_window(map->mlx, map->win);
 	exit (0);
 	return (0);
 }
 
-// Prints the error and the liberates all the memory allocated to finally, exit de program.
-int ft_error(char *error, t_map *map)
+// Prints the error and the liberates all the memory allocated to finally; 
+// exit de program.
+int	ft_error(char *error, t_map *map)
 {
-    ft_printf("%s%s", RED, error);
-    if (map->starg == 1)
-        free_full_map(map);
-    exit(EXIT_FAILURE);
+	ft_printf("%s%s", RED, error);
+	if (map->starg == 1)
+		free_full_map(map);
+	exit(EXIT_FAILURE);
 }
 
 // Liberates all the map.
-void free_full_map(t_map *map)
+void	free_full_map(t_map *map)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    if (map->map)
-    {
-        while (map->map[i])
-        {
-            free(map->map[i]);
-            i++;
-        }
-        free(map->map);
-    }
+	i = 0;
+	if (map->map)
+	{
+		while (map->map[i])
+		{
+			free(map->map[i]);
+			i++;
+		}
+		free(map->map);
+	}
 }
 
 // Counts how many coins have been collected and 
 // how many are left.
-void coin_count(t_map *map)
+void	coin_count(t_map *map)
 {
 	map->coin--;
 	ft_printf("%c%s%s%c%d%c", '\n', GREEN, "Coin collected, coins left:",
