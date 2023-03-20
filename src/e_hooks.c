@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 14:21:11 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/18 14:03:04 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/20 17:18:47 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,44 @@
 
 void    mov_up(t_map *map)
 {
+	if (map->map[map->player_y - 1][map->player_x] == 'C')
+		map->coin--;
     map->map[map->player_y][map->player_x] = '0';
     map->map[map->player_y - 1][map->player_x] = 'P';
+	map->player_y = map->player_y - 1;
     map->mov++;
    // print_map(map);
 }
 
 void  mov_down(t_map *map)
 {
+	if (map->map[map->player_y + 1][map->player_x] == 'C')
+		map->coin--;
     map->map[map->player_y][map->player_x] = '0';
     map->map[map->player_y + 1][map->player_x] = 'P';
+	map->player_y = map->player_y + 1;
     map->mov++;
    // print_map(map);
 }
 
 void mov_right(t_map *map)
 {
+	if (map->map[map->player_y][map->player_x + 1] == 'C')
+		map->coin--;
     map->map[map->player_y][map->player_x] = '0';
     map->map[map->player_y][map->player_x + 1] = 'P';
+	map->player_x = map->player_x + 1;
     map->mov++;
    // print_map(map);
 }
 
 void mov_left(t_map *map)
 {
+	if (map->map[map->player_y][map->player_x - 1] == 'C')
+		map->coin--;
     map->map[map->player_y][map->player_x] = '0';
     map->map[map->player_y][map->player_x - 1] = 'P';
+	map->player_x = map->player_x - 1;
     map->mov++;
  //   print_map(map);
 }
@@ -78,7 +90,7 @@ int detect_key(int key, t_map *map)
         i++;
     }
     printf("%c", '\n');
-
+	printf("\n%d\n", map->coin);
     print_map(map);
     return (0);   
 }

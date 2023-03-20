@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 17:03:27 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/18 14:06:35 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/20 16:08:58 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,11 @@ int main(int argc, char *argv[])
     check_borders(&map);
     check_path(&map, map.player_y, map.player_x);
     check_and_free(&map);
+	
     init_img(&map);
     print_map(&map);
     mlx_key_hook(map.win, detect_key, &map);
-    mlx_hook(map.win, 2, 1L << 0, detect_key, &map);
+   // mlx_hook(map.win, 2, 1L << 0, detect_key, &map);
 	mlx_hook(map.win, 17, 0, end_game, &map);
     mlx_loop(map.mlx);
 }

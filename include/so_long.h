@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 17:52:30 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/17 23:39:42 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/20 16:20:38 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,7 @@ typedef struct s_map
 	void *c;
 	void *f;
 	void *ex;
-	void *w;
-	
-
+	void *w;	
 } t_map;
 
 void check_args(int argc, char *argv, t_map *map);

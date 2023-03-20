@@ -6,11 +6,9 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 17:51:16 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/17 17:37:28 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/20 16:33:28 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "../include/so_long.h"
 
@@ -39,8 +37,8 @@ void check_args(int argc, char *argv, t_map *map)
 // Terminates the game.
 int end_game(t_map *map)
 {
-	free_full_map(map);
-	mlx_destroy_window(map->mlx, map->win);
+	//free_full_map(map);
+//	mlx_destroy_window(map->mlx, map->win);
 	exit (0);
 	return (0);
 }
