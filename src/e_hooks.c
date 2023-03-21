@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 14:21:11 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/20 21:19:40 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/21 12:50:02 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ void	mov_left(t_map *map)
 	print_map(map);
 }
 
+// First, fills all the map with floors
+// Detects which key you are pressing and moves your player
 int	detect_key(int key, t_map *map)
 {
 	if (key == ESC)
