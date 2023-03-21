@@ -6,11 +6,11 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 17:03:27 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/21 13:41:43 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/21 14:38:18 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long_bonus.h"
+#include "../../include/so_long_bonus.h"
 
 // Created to just initialize some variables and reduce other functions length
 void	init_vars(t_map *map)

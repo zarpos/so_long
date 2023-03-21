@@ -6,11 +6,11 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 14:21:11 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/21 13:41:31 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/21 14:38:03 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long_bonus.h"
+#include "../../include/so_long_bonus.h"
 
 void	mov_up(t_map *map)
 {

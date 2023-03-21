@@ -6,11 +6,11 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 10:32:15 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/21 13:41:35 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/21 14:38:09 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long_bonus.h"
+#include "../../include/so_long_bonus.h"
 
 // fills all the map with the floor sprite
 void	all_floor(t_map *map)

@@ -6,11 +6,11 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 17:10:25 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/21 13:41:38 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/21 15:03:31 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long_bonus.h"
+#include "../../include/so_long_bonus.h"
 
 // This function will open the map, read it and then convert it to a (char **)
 // It will create a copy of the map to manipulate it during the path check
@@ -58,7 +58,7 @@ int	check_char_map(t_map *map)
 		while (read[y][x])
 		{
 			if (read[y][x] != '0' && read[y][x] != '1' && read[y][x] != 'C'
-			&& read[y][x] != 'E' && read[y][x] != 'P')
+			&& read[y][x] != 'E' && read[y][x] != 'P' && read[y][x] != 'K')
 				ft_error("invalid char detected!", map);
 			x++;
 		}

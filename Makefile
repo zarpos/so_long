@@ -6,19 +6,22 @@
 #    By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/11 16:17:21 by drubio-m          #+#    #+#              #
-#    Updated: 2023/03/21 12:31:10 by drubio-m         ###   ########.fr        #
+#    Updated: 2023/03/21 15:00:34 by drubio-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 SRC = read_map.c utils.c so_long.c check_path.c print_game.c e_hooks.c
 SRC_DIR = ./src
-BONUS =
+BONUS = read_map_bonus.c utils_bonus.c so_long_bonus.c check_path_bonus.c \
+		print_game_bonus.c e_hooks_bonus.c
+BONUS_DIR = ./src/bonus
 OBJS = $(addprefix $(SRC_DIR)/, $(SRC:.c=.o))
-BONUS_OBJS = $(BONUS:.c=.o)
+BONUS_OBJS = $(addprefix $(BONUS_DIR)/, $(BONUS:.c=.o))
 C = gcc
 FLAGS = -Wall -Wextra -Werror -g -fsanitize=address
 NAME = so_long
+B_NAME = so_long_bonus
 RM = rm -rf
 
 #INCLUDE = -lmlx -framework OpenGL -framework AppKit
@@ -49,14 +52,28 @@ $(NAME): $(OBJS)
 	@sleep 3
 	@echo $(CURSIVE)$(GREEN) " - Compiled" $(NONE)
 
-
 B = .
+
+#prueba
+
+$(B_NAME): $(BONUS_OBJS)
+	@echo " \033[33m[ .. ] | Compiling minilibx..\033[0m"
+	@make -C $(MLX_PATH)
+	@echo $(CURSIVE)$(GREEN) " - Making libft..." $(NONE)
+	@sleep 3
+	@make bonus -C $(LIBFT_DIR)
+	@echo $(CURSIVE)$(GREEN) " - Compiling $(B_NAME)" $(NONE)
+	@gcc $(FLAGS) $(BONUS_OBJS) $(MINILIBX) $(LIBFT) -o $(B_NAME)
+	@sleep 3
+	@echo $(CURSIVE)$(GREEN) " - Compiled" $(NONE)
+
+#prueba finalizada
 
 bonus: $(B)
 
-$(B): $(OBJ) $(BONUS_OBJS)
-	$(C) $(FLAGS) $(SRC)
-	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+$(B): $(B_NAME)
+	
+		
 clean:
 	$(RM) $(OBJS) $(BONUS_OBJS) $(LIBFT_A)
 fclean: clean

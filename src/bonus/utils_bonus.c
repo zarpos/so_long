@@ -6,11 +6,11 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 17:51:16 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/21 13:41:47 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/21 14:38:27 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long_bonus.h"
+#include "../../include/so_long_bonus.h"
 
 // This function checks that there is only 1 argument and its a file '.ber'
 void	check_args(int argc, char *argv, t_map *map)

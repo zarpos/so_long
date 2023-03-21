@@ -6,11 +6,11 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 18:00:17 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/21 13:41:26 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/21 14:37:58 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long_bonus.h"
+#include "../../include/so_long_bonus.h"
 
 // It will eavluate if there is a valid way to the exit
 void	check_path(t_map *map, int y, int x)
