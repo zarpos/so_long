@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 10:32:15 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/21 17:00:58 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/21 22:45:34 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,13 @@ void	print_map(t_map *map)
 {
 	int	y;
 	int	x;
+	int loop;
 
 	y = 0;
 	x = 0;
+	loop = 0;
 	all_floor(map);
+//		choose_player(map);
 	while (map->map[y])
 	{
 		x = 0;

@@ -6,7 +6,7 @@
 #    By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/11 16:17:21 by drubio-m          #+#    #+#              #
-#    Updated: 2023/03/21 19:10:59 by drubio-m         ###   ########.fr        #
+#    Updated: 2023/03/21 22:35:57 by drubio-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@
 SRC = read_map.c utils.c so_long.c check_path.c print_game.c e_hooks.c
 SRC_DIR = ./src
 BONUS = read_map_bonus.c utils_bonus.c so_long_bonus.c check_path_bonus.c \
-		print_game_bonus.c e_hooks_bonus.c steps_screen_bonus.c
+		print_game_bonus.c e_hooks_bonus.c steps_screen_bonus.c \
+		utils2_bonus.c
 BONUS_DIR = ./src/bonus
 OBJS = $(addprefix $(SRC_DIR)/, $(SRC:.c=.o))
 BONUS_OBJS = $(addprefix $(BONUS_DIR)/, $(BONUS:.c=.o))

@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 14:21:11 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/21 12:50:02 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/21 21:28:49 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	detect_key(int key, t_map *map)
 		|| (key == A && map->map[map->player_y][map->player_x - 1] == 'E')
 		|| (key == W && map->map[map->player_y - 1][map->player_x] == 'E')))
 	{
-		ft_printf("%s%s", GREEN, "Congrats!!! You are financially free!");
+		ft_printf("\n%s%s", GREEN, "Congrats!!! You are financially free!");
 		end_game(map);
 	}
 	if (key == W && map->map[map->player_y - 1][map->player_x] != '1'
