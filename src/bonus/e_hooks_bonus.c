@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 14:21:11 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/21 14:38:03 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/21 19:39:35 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,49 +14,69 @@
 
 void	mov_up(t_map *map)
 {
+	if (map->map[map->player_y - 1][map->player_x] == 'K')
+	{
+		ft_printf("\n%s", "You died!");
+		end_game(map);
+	}
 	if (map->map[map->player_y - 1][map->player_x] == 'C')
 		map->coin--;
 	map->map[map->player_y][map->player_x] = '0';
 	map->map[map->player_y - 1][map->player_x] = 'P';
 	map->player_y = map->player_y - 1;
 	map->mov++;
-	ft_printf("\n%d", map->mov);
+	print_all_movs(map);
 	print_map(map);
 }
 
 void	mov_down(t_map *map)
 {
+	if (map->map[map->player_y + 1][map->player_x] == 'K')
+	{
+		ft_printf("\n%s", "You died!");
+		end_game(map);
+	}
 	if (map->map[map->player_y + 1][map->player_x] == 'C')
 		map->coin--;
 	map->map[map->player_y][map->player_x] = '0';
 	map->map[map->player_y + 1][map->player_x] = 'P';
 	map->player_y = map->player_y + 1;
 	map->mov++;
-	ft_printf("\n%d", map->mov);
+	print_all_movs(map);
 	print_map(map);
 }
 
 void	mov_right(t_map *map)
 {
+	if (map->map[map->player_y][map->player_x + 1] == 'K')
+	{
+		ft_printf("\n%s", "You died!");
+		end_game(map);
+	}
 	if (map->map[map->player_y][map->player_x + 1] == 'C')
 		map->coin--;
 	map->map[map->player_y][map->player_x] = '0';
 	map->map[map->player_y][map->player_x + 1] = 'P';
 	map->player_x = map->player_x + 1;
 	map->mov++;
-	ft_printf("\n%d", map->mov);
+	print_all_movs(map);
 	print_map(map);
 }
 
 void	mov_left(t_map *map)
 {
+	if (map->map[map->player_y][map->player_x - 1] == 'K')
+	{
+		ft_printf("\n%s", "You died!");
+		end_game(map);
+	}
 	if (map->map[map->player_y][map->player_x - 1] == 'C')
 		map->coin--;
 	map->map[map->player_y][map->player_x] = '0';
 	map->map[map->player_y][map->player_x - 1] = 'P';
 	map->player_x = map->player_x - 1;
 	map->mov++;
-	ft_printf("\n%d", map->mov);
+	print_all_movs(map);
 	print_map(map);
 }
 

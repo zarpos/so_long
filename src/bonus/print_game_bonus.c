@@ -6,13 +6,13 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 10:32:15 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/21 14:38:09 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/21 17:00:58 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long_bonus.h"
 
-// fills all the map with the floor sprite
+// Fills all the map with the floor sprite
 void	all_floor(t_map *map)
 {
 	int	y;
@@ -42,6 +42,8 @@ void	draw_img(int y, int x, t_map *map)
 		mlx_put_image_to_window(map->mlx, map->win, map->c, x * 56, y * 56);
 	if (map->map[y][x] == 'E')
 		mlx_put_image_to_window(map->mlx, map->win, map->ex, x * 56, y * 56);
+	if (map->map[y][x] == 'K')
+		mlx_put_image_to_window(map->mlx, map->win, map->en, x * 56, y * 56);
 }
 
 // The main function to start printing sprites
