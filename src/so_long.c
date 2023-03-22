@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 17:03:27 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/21 12:56:30 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/22 16:44:44 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,20 @@ void	init_img(t_map *map)
 	map->win = mlx_new_window(map->mlx, map->x_max * 56, map->y_max * 56,
 			"So_Long");
 	map->p = mlx_xpm_file_to_image(map->mlx, PL, &map->img_w, &map->img_h);
-    if (map->p == NULL)
-        ft_error("Image couldn't be opened!", map);
+	if (map->p == NULL)
+		ft_error("Image couldn't be opened!", map);
 	map->c = mlx_xpm_file_to_image(map->mlx, CO, &map->img_w, &map->img_h);
-    if (map->c == NULL)
-        ft_error("Image couldn't be opened!", map);
+	if (map->c == NULL)
+		ft_error("Image couldn't be opened!", map);
 	map->f = mlx_xpm_file_to_image(map->mlx, FL, &map->img_w, &map->img_h);
-    if (map->f == NULL)
-        ft_error("Image couldn't be opened!", map);
+	if (map->f == NULL)
+		ft_error("Image couldn't be opened!", map);
 	map->ex = mlx_xpm_file_to_image(map->mlx, EX, &map->img_w, &map->img_h);
-    if (map->ex == NULL)
-        ft_error("Image couldn't be opened!", map);
+	if (map->ex == NULL)
+		ft_error("Image couldn't be opened!", map);
 	map->w = mlx_xpm_file_to_image(map->mlx, WL, &map->img_w, &map->img_h);
-    if (map->w == NULL)
-        ft_error("Image couldn't be opened!", map);
+	if (map->w == NULL)
+		ft_error("Image couldn't be opened!", map);
 }
 
 int	main(int argc, char *argv[])
