@@ -6,7 +6,7 @@
 #    By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/11 16:17:21 by drubio-m          #+#    #+#              #
-#    Updated: 2023/03/22 14:39:59 by drubio-m         ###   ########.fr        #
+#    Updated: 2023/03/22 16:34:29 by drubio-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,7 @@ B = .
 
 #prueba
 
+.SILENT: $(BONUS_OBJS)
 $(B_NAME): $(BONUS_OBJS)
 	@echo " \033[33m[ .. ] | Compiling minilibx..\033[0m"
 	@make -C $(MLX_PATH)
