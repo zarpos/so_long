@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 17:03:27 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/22 21:58:40 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/22 22:35:01 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,19 @@ void	init_img(t_map *map)
 		ft_error("\nImage couldn't be opened", map);
 }
 
+void check_player_sprites(t_map *map)
+{
+	map->img = mlx_xpm_file_to_image(map->mlx, PL_U, &map->img_w, &map->img_h);
+	if (map->img == NULL)
+		ft_error("\nImage couldn't be opened!", map);
+	map->img = mlx_xpm_file_to_image(map->mlx, PL_R, &map->img_w, &map->img_h);
+	if (map->img == NULL)
+		ft_error("\nImage couldn't be opened!", map);
+	map->img = mlx_xpm_file_to_image(map->mlx, PL_L, &map->img_w, &map->img_h);
+	if (map->img == NULL)
+		ft_error("\nImage couldn't be opened!", map);
+}
+
 int	main(int argc, char *argv[])
 {
 	t_map	map;
@@ -58,6 +71,7 @@ int	main(int argc, char *argv[])
 	check_path(&map, map.player_y, map.player_x);
 	check_and_free(&map);
 	init_img(&map);
+	check_player_sprites(&map);
 	print_map(&map);
 	mlx_key_hook(map.win, detect_key, &map);
 	mlx_hook(map.win, 17, 0, end_game, &map);
