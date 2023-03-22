@@ -6,7 +6,7 @@
 #    By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/11 16:17:21 by drubio-m          #+#    #+#              #
-#    Updated: 2023/03/21 22:35:57 by drubio-m         ###   ########.fr        #
+#    Updated: 2023/03/22 14:39:59 by drubio-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,7 +80,7 @@ clean:
 fclean: clean
 	@echo $(CURSIVE)$(GREEN) " - Removing $(NAME)..." $(NONE)
 	@sleep 1
-	@$(RM) $(NAME) $(BONUS_OBJS) $(OBJS)
+	@$(RM) $(NAME) $(B_NAME) $(BONUS_OBJS) $(OBJS)
 	@make -C $(LIBFT_DIR) fclean
 	@echo $(CURSIVE)$(GREEN) " - Clean!" $(NONE)
 re: fclean
