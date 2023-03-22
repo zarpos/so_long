@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 17:10:25 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/20 21:22:06 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/22 22:01:09 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	convert_map(char *argv, t_map *map)
 	if (!fd || fd == -1)
 	{
 		map->starg = 0;
-		ft_error("File not found!", map);
+		ft_error("\nFile not found!", map);
 	}
 	map1_arr = ft_strdup("");
 	while (1)
@@ -59,7 +59,7 @@ int	check_char_map(t_map *map)
 		{
 			if (read[y][x] != '0' && read[y][x] != '1' && read[y][x] != 'C'
 			&& read[y][x] != 'E' && read[y][x] != 'P')
-				ft_error("invalid char detected!", map);
+				ft_error("\ninvalid char detected!", map);
 			x++;
 		}
 		y++;
@@ -72,7 +72,7 @@ static void	validate_elements(t_map *map)
 {
 	map->coin_copy = map->coin;
 	if (map->player != 1 || map->exit != 1)
-		ft_error("The map doesn't have the right elements!", map);
+		ft_error("\nThe map doesn't have the right elements!", map);
 }
 
 // Only function it has, count how many coins, players and exits are in the map
@@ -111,14 +111,7 @@ int	check_borders(t_map *map)
 	int	x;
 	int	y;
 
-	y = 0;
-	map->y_max = 0;
-	map->x_max = ft_strlen(map->map[y]);
-	while (map->map[y])
-	{
-		map->y_max++;
-		y++;
-	}
+	check_if_rect(map);
 	y = 0;
 	while (y < map->y_max)
 	{
@@ -127,7 +120,7 @@ int	check_borders(t_map *map)
 		{
 			if (map->map[0][x] != '1' || map->map[map->y_max - 1][x] != '1'
 			|| map->map[y][0] != '1' || map->map[y][map->x_max - 1] != '1')
-				ft_error("Borders aren't correct", map);
+				ft_error("\nBorders aren't correct", map);
 			x++;
 		}
 		y++;

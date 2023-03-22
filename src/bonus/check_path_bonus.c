@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 18:00:17 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/21 17:16:11 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/22 22:03:13 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,25 @@ void	check_and_free(t_map *map)
 	free(map->map_copy);
 	if (map->coin_copy != 0 || map->exit != 1)
 		ft_error("\nError\nEl mapa no tiene camino valido\n", map);
+}
+
+void check_if_rect(t_map *map)
+{
+	int	y;
+	
+	y = 0;
+	map->y_max = 0;
+	map->x_max = ft_strlen(map->map[y]);
+	while (map->map[y])
+	{
+		map->y_max++;
+		y++;
+	}
+	y = 0;
+	while (y < map->y_max)
+	{
+		if (map->x_max != ft_strlen(map->map[y]))
+			ft_error("\nThe map is not a rectangle!", map);
+		y++;
+	}	
 }

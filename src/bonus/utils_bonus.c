@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 17:51:16 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/21 14:38:27 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/22 21:56:10 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	check_args(int argc, char *argv, t_map *map)
 	if (argc != 2)
 	{
 		map->starg = 0;
-		ft_error("Error, you can only try one argument!", map);
+		ft_error("\nError, you can only try one argument!", map);
 	}
 	else
 	{
@@ -29,7 +29,7 @@ void	check_args(int argc, char *argv, t_map *map)
 		if (ft_strncmp(argv + (len - 4), ".ber", 4))
 		{
 			map->starg = 0;
-			ft_error("Extension not valid! try a .ber", map);
+			ft_error("\nExtension not valid! try a .ber", map);
 		}
 	}
 }

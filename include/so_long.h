@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 17:52:30 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/22 16:43:19 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/22 21:56:56 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@
 # define DOWN 125
 # define UP 126
 
-# define PL "./sprites/Player.xpm"
+# define PL "./sprites/Down.xpm"
 # define CO "./sprites/Coin.xpm"
 # define EX "./sprites/Exit.xpm"
 # define WL "./sprites/Wall.xpm"
@@ -93,5 +93,6 @@ void	draw_img(int y, int x, t_map *map);
 int		end_game(t_map *map);
 void	coin_count(t_map *map);
 int		detect_key(int key, t_map *map);
+void	check_if_rect(t_map *map);
 
 #endif

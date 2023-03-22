@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 17:52:30 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/22 16:08:30 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/22 22:04:59 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@
 # define DOWN 125
 # define UP 126
 
-# define PL "./sprites/Right.xpm"
+# define PL "./sprites/Down.xpm"
 # define CO "./sprites/Coin.xpm"
 # define EX "./sprites/Exit.xpm"
 # define WL "./sprites/Wall.xpm"
@@ -100,4 +100,5 @@ void	print_all_movs(t_map *map);
 void	print_movs_terminal(t_map *map);
 void	print_movs_screen(t_map *map);
 void	choose_player(t_map *map);
+void	check_if_rect(t_map *map);
 #endif
