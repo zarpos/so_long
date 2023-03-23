@@ -6,7 +6,7 @@
 /*   By: drubio-m <drubio-m@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 17:52:30 by drubio-m          #+#    #+#             */
-/*   Updated: 2023/03/22 22:23:10 by drubio-m         ###   ########.fr       */
+/*   Updated: 2023/03/23 17:16:34 by drubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@
 # define PL_U "./sprites/Up.xpm"
 # define PL_R "./sprites/Right.xpm"
 # define PL_L "./sprites/Left.xpm"
+
 typedef struct s_map
 {
 	char	**map;
